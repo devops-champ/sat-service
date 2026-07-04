@@ -18,3 +18,15 @@ spec:
   dependsOn:
     - resource:default/orders-db
     - resource:default/kafka-cluster
+  platform:
+    appId: APP-5678
+    jiraId: PAY-1234
+    businessUnit: Retail Banking
+    supportTeam: platform-support
+    Cloud-Cost: CC-12345
+  infrastructure:
+    environments:
+      - name: dev
+        projectId: devops-champ
+      - name: qa
+        projectId: devops-champ
