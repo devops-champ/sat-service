@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sat-service
+  description: Sample service with CI/CD
+  annotations:
+    github.com/project-slug: devops-champ/sat-service
+    backstage.io/techdocs-ref: dir:.
+    sonarqube.org/project-key: devops-champ_sat-service
+    roadie-backstage-pull-requests/default-filter: "is:open is:pr"
+    platform.io/argocd-dev: sat-service-dev
+    platform.io/argocd-qa: sat-service-qa
+    platform.io/argocd-prod: sat-service-prod
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:default/platform-team
+  dependsOn:
+    - resource:default/orders-db
+    - resource:default/kafka-cluster
